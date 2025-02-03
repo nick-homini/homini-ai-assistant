@@ -1,0 +1,3 @@
+titleVariable=Funginino Assistent från Fresh Fungi
+chatTextTitle=Fråga Funginino
+iframeSrc=https://funginino.streamlit.app/?embedded=true&embed_options=light_theme,show_padding
