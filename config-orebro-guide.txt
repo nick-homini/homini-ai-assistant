@@ -1,0 +1,3 @@
+titleVariable=Örebro Guide from Homini AI
+chatTextTitle=Ask Örebro Guide
+iframeSrc=https://orebro-guide.streamlit.app/?embedded=true&embed_options=light_theme,show_padding
