@@ -1,0 +1,3 @@
+titleVariable=Viking Advisor from Homini AI
+chatTextTitle=Ask Viking
+iframeSrc=https://viking-swed-pub-serv.streamlit.app/?embedded=true&embed_options=light_theme,show_padding
