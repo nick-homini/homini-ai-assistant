@@ -1,0 +1,3 @@
+titleVariable=SolidX AI Assistent från Homini AI
+chatTextTitle=Ask SolidX
+iframeSrc=https://solidx-ai-assistant.streamlit.app/?embedded=true&embed_options=light_theme,show_padding
