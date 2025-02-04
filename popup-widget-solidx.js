@@ -3,7 +3,7 @@
     // Function to load config.txt and parse values
     async function loadConfig() {
         try {
-            const response = await fetch("config-viking.txt");
+            const response = await fetch("config-solidx.txt");
             const text = await response.text();
             const config = {};
     
