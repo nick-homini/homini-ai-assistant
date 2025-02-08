@@ -143,7 +143,7 @@
         // Add favicon dynamically
         const link = document.createElement('link');
         link.rel = 'icon';
-        link.href = 'Homini-logo.ico'; // Path to your favicon file
+        link.href = 'https://nick-homini.github.io/homini-ai-assistant/Homini-logo.ico'; // Path to your favicon file
         link.type = 'image/x-icon';
         document.head.appendChild(link);
 
@@ -171,7 +171,7 @@
         // Create a button to trigger the pop-up
         const openBtn = document.createElement("img");
         openBtn.id = "openPopup";
-        openBtn.src = "homini_assistant_icon.svg"; // Update with actual SVG path
+        openBtn.src = "https://nick-homini.github.io/homini-ai-assistant/homini_assistant_icon.svg"; // Update with actual SVG path
         openBtn.alt = "Fråga Homini AI Assistent";
         openBtn.style.borderRadius = "25px";
         openBtn.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.2)";
