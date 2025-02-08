@@ -3,12 +3,9 @@
     // Function to load config.txt and parse values
     async function loadConfig() {
         try {
-            const response = await fetch("https://nick-homini.github.io/homini-ai-assistant/config-funginino.txt")
-                .then(response => response.text())
-                .then(data => console.log("Config file loaded:", data))
-                .catch(error => console.error("Error loading config file:", error));
-
-            const text = await response.text();
+            const response = await fetch("https://nick-homini.github.io/homini-ai-assistant/config-funginino.txt");
+            const text = await response.text();    
+            console.log("Config file loaded:", text);
             const config = {};
     
             text.split("\n").forEach((line) => {
@@ -27,7 +24,7 @@
     
             return config;
         } catch (error) {
-            console.error("Error loading config.txt:", error);
+            console.error("Error loading config file:", error);
             return {};
         }
     }
