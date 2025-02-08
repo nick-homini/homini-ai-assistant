@@ -36,9 +36,11 @@
         const config = await loadConfig();
 
         // Default values if config.txt is missing
-        const chatbotUrl = config.iframeSrc || "https://funginino.streamlit.app/?embedded=true&embed_options=light_theme,show_padding";
+        const chatbotUrl = config.iframeSrc || "https://freshfungi.onrender.com/?embedded=true&embed_options=light_theme,show_padding";
         const chatTextTitle = config.chatTextTitle || "Fråga Homini AI Assistent";
         const titleVariable = config.titleVariable || "Homini AI Assistent";
+
+        console.log("Chatbot URL:", chatbotUrl); // Debugging to ensure URL is correctly set
 
         // Create a style element for CSS
         const style = document.createElement("style");
@@ -205,7 +207,6 @@
         <div class="popup-content">
             <div class="iframe-container">
                 <iframe
-                    src='${chatbotUrl}'
                     frameborder="0"
                     id="chatFrame"
                 ></iframe>
@@ -218,16 +219,14 @@
         const minimizeBtn = document.getElementById("minimizeBtn");
         const closeBtn = document.getElementById("closePopup");
 
-        // Close the popup
-        closeBtn.addEventListener("click", hidePopup);
-        
         // Open the popup
         openBtn.addEventListener("click", showPopup);
 
+        // Close the popup
+        closeBtn.addEventListener("click", hidePopup);
+                
         // Minimize popup (hide completely)
-        minimizeBtn.addEventListener("click", () => {
-            popup.classList.toggle("minimized");
-        });
+        minimizeBtn.addEventListener("click", minimizePopup);
         
         // Click outside to minimize instead of closing
         window.addEventListener("click", (event) => {
@@ -240,6 +239,7 @@
         function showPopup() {
             popup.style.display = "block";
             popup.classList.remove("minimized");
+            document.getElementById("chatFrame").src = chatbotUrl;
 
             if (popup.scrollIntoView) {
                 popup.scrollIntoView({ behavior: "smooth" });
@@ -255,6 +255,11 @@
         // Function to hide the pop-up completely
         function hidePopup() {
             popup.style.display = "none";
+        }
+
+        // Function to minimize the pop-up
+        function minimizePopup() {
+            popup.classList.toggle("minimized");
         }
 
         // Auto-focus the chatbot iframe when loaded
