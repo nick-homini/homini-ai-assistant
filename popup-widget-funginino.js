@@ -3,7 +3,11 @@
     // Function to load config.txt and parse values
     async function loadConfig() {
         try {
-            const response = await fetch("config-funginino.txt");
+            const response = await fetch("https://nick-homini.github.io/homini-ai-assistant/config-funginino.txt")
+                .then(response => response.text())
+                .then(data => console.log("Config file loaded:", data))
+                .catch(error => console.error("Error loading config file:", error));
+
             const text = await response.text();
             const config = {};
     
